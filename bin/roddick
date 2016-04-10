@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @package Smrtr\Roddick
+ * @author Joe Green <joe.green@smrtr.co.uk>
+ */
+$autoloadLocations = [
+    realpath(__DIR__.'/../vendor/autoload.php'),
+    realpath(__DIR__.'/../../../autoload.php'),
+];
+foreach ($autoloadLocations as $autoloadLocation) {
+    if (file_exists($autoloadLocation)) {
+        require_once $autoloadLocation;
+        break;
+    }
+}
+$app = new \Symfony\Component\Console\Application('roddick');
+$app->add(new \Smrtr\Roddick\StatusCommand);
+$app->add(new \Smrtr\Roddick\StartCommand);
+$app->add(new \Smrtr\Roddick\StopCommand);
+$app->run();
