@@ -58,6 +58,7 @@ class StatusCommand extends Command
             }
         } else {
             $output->writeln(sprintf("<error>No web server listening on http://%s</error>", $address));
+            return 1;
         }
     }
 }
