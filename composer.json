@@ -10,8 +10,7 @@
   ],
   "type": "library",
   "bin": [
-    "bin/roddick-start",
-    "bin/roddick-stop"
+    "bin/roddick"
   ],
   "require": {
     "php": ">=5.4.0",
