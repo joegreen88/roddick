@@ -54,7 +54,7 @@ class StatusCommand extends Command
         if (file_exists($lockFile)) {
             $output->writeln(sprintf("<info>Web server is listening on http://%s</info>", $address));
             if ($docRoot = file_get_contents($lockFile)) {
-                $output->writeln(sprintf("Document root:  \"%s\"", $address, $docRoot));
+                $output->writeln(sprintf("Document root:  \"%s\"", $docRoot));
             }
         } else {
             $output->writeln(sprintf("<error>No web server listening on http://%s</error>", $address));
